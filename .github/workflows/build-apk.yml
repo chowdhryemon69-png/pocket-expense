@@ -1,0 +1,58 @@
+name: Build Pocket Expense APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - Pocket-Expense-Android.zip
+      - .github/workflows/build-apk.yml
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download repository
+        uses: actions/checkout@v4
+
+      - name: Extract Android project
+        run: unzip -q Pocket-Expense-Android.zip -d extracted
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install required SDK packages
+        run: sdkmanager "platforms;android-35" "build-tools;35.0.0"
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.9'
+
+      - name: Check expense calculations
+        working-directory: extracted/pocket-expense
+        run: |
+          node tests/core.test.cjs
+          node tests/ui.test.cjs
+          node tests/report.test.cjs
+
+      - name: Build installable APK
+        working-directory: extracted/pocket-expense
+        run: gradle assembleDebug --no-daemon
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: Pocket-Expense-APK
+          path: extracted/pocket-expense/app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
