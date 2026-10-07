@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="action_add_expense">Add expense</string>
+<string name="action_add_food">Add food expense</string>
+<string name="action_add_transport">Add transport expense</string>
+<string name="action_add_groceries">Add groceries expense</string>
+<string name="widget_detailed_label">Pocket · Detailed</string>
+<string name="widget_compact_label">Pocket · Compact</string>
+<string name="widget_description">Today and monthly spending, remaining budget, available today and expense shortcuts.</string>
+</resources>

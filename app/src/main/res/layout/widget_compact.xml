@@ -1,0 +1,22 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/card" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:padding="10dp" android:background="@drawable/card">
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:baselineAligned="false">
+<LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginEnd="6dp">
+<TextView android:id="@+id/label" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="TODAY’S SPENDING" android:textSize="10sp" android:textColor="#B1C8BF" android:maxLines="1" android:ellipsize="end"/>
+<TextView android:id="@+id/today" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:minHeight="26dp" android:text="৳ 0" android:textColor="#FFFDF4" android:textStyle="bold" android:maxLines="1" android:ellipsize="end" android:autoSizeTextType="uniform" android:autoSizeMinTextSize="14sp" android:autoSizeMaxTextSize="30sp" android:autoSizeStepGranularity="1sp"/>
+</LinearLayout>
+<TextView android:id="@+id/add" android:layout_width="44dp" android:layout_height="44dp" android:gravity="center" android:background="@drawable/add" android:text="+" android:textSize="26sp" android:textColor="#123E35" android:contentDescription="@string/action_add_expense"/>
+</LinearLayout>
+<LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:orientation="vertical" android:layout_marginTop="6dp">
+<TextView android:id="@+id/remaining" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Remaining this month · ৳ 0.00" android:textColor="#D9F08B" android:textSize="12sp" android:maxLines="1" android:ellipsize="end" android:autoSizeTextType="uniform" android:autoSizeMinTextSize="10sp" android:autoSizeMaxTextSize="12sp" android:autoSizeStepGranularity="1sp"/>
+<TextView android:id="@+id/addAvailable" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="Available today · ৳ 0.00" android:textColor="#B1C8BF" android:textSize="11sp" android:maxLines="1" android:ellipsize="end"/>
+</LinearLayout>
+<!-- Duplicate label drawn by the detailed layout family only; kept for shared RemoteViews ids. -->
+<TextView android:id="@+id/check" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" android:text=""/>
+<TextView android:id="@+id/month" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" android:text=""/>
+<TextView android:id="@+id/allowance" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" android:text=""/>
+<TextView android:id="@+id/pace" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" android:text=""/>
+<ProgressBar android:id="@+id/progress" style="@android:style/Widget.ProgressBar.Horizontal" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone"/>
+<TextView android:id="@+id/addFood" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" android:text=""/>
+<TextView android:id="@+id/addTransport" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" android:text=""/>
+<TextView android:id="@+id/addGroceries" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" android:text=""/>
+</LinearLayout>

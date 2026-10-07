@@ -1,0 +1,16 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<application android:theme="@android:style/Theme.Material.Light.NoActionBar" android:label="Pocket Expense" android:icon="@drawable/icon" android:allowBackup="false" android:supportsRtl="true">
+<activity android:name=".MainActivity" android:exported="true" android:windowSoftInputMode="adjustResize">
+<intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.LAUNCHER"/></intent-filter>
+</activity>
+<!-- DATE_CHANGED, TIME_SET and TIMEZONE_CHANGED keep day and month totals correct without a polling interval. -->
+<receiver android:name=".ExpenseWidget" android:exported="false" android:label="@string/widget_detailed_label">
+<intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE"/><action android:name="android.appwidget.action.APPWIDGET_OPTIONS_CHANGED"/><action android:name="android.intent.action.DATE_CHANGED"/><action android:name="android.intent.action.TIME_SET"/><action android:name="android.intent.action.TIMEZONE_CHANGED"/><action android:name="android.intent.action.LOCALE_CHANGED"/><action android:name="android.intent.action.MY_PACKAGE_REPLACED"/><action android:name="android.intent.action.BOOT_COMPLETED"/></intent-filter>
+<meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_info"/>
+</receiver>
+<receiver android:name=".CompactWidget" android:exported="false" android:label="@string/widget_compact_label">
+<intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE"/><action android:name="android.appwidget.action.APPWIDGET_OPTIONS_CHANGED"/><action android:name="android.intent.action.DATE_CHANGED"/><action android:name="android.intent.action.TIME_SET"/><action android:name="android.intent.action.TIMEZONE_CHANGED"/><action android:name="android.intent.action.LOCALE_CHANGED"/><action android:name="android.intent.action.MY_PACKAGE_REPLACED"/><action android:name="android.intent.action.BOOT_COMPLETED"/></intent-filter>
+<meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_compact_info"/>
+</receiver>
+</application>
+</manifest>

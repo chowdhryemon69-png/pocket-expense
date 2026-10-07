@@ -1,0 +1,40 @@
+plugins { id 'com.android.application' }
+
+/* Release signing reads keystore.properties when it exists; the file and the key stay out of source control. */
+def keystoreFile = rootProject.file('keystore.properties')
+def keystore = new Properties()
+def hasReleaseKey = keystoreFile.exists()
+if (hasReleaseKey) {
+    keystoreFile.withInputStream { keystore.load(it) }
+}
+
+android {
+    namespace 'com.chowdhury.pocket'
+    compileSdk 35
+    defaultConfig {
+        applicationId 'com.chowdhury.pocket'
+        minSdk 26
+        targetSdk 35
+        versionCode 4
+        versionName '0.3'
+    }
+    compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
+    signingConfigs {
+        release {
+            if (hasReleaseKey) {
+                storeFile file(keystore['storeFile'])
+                storePassword keystore['storePassword']
+                keyAlias keystore['keyAlias']
+                keyPassword keystore['keyPassword']
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            // Without a keystore a release build stops here instead of emitting an unsigned APK.
+            if (hasReleaseKey) signingConfig signingConfigs.release
+            else logger.lifecycle('keystore.properties not found: assembleRelease will fail. See README "Release signing".')
+        }
+    }
+}
