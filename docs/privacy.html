@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Privacy Policy — Pocket Expense</title>
+  <meta name="description" content="Privacy Policy for Pocket Expense. Pocket Expense is a 100% offline, private expense tracker for Android. No data collection, no account, no ads.">
+  <style>
+    :root {
+      --ink: #183f35;
+      --accent: #d9f08b;
+      --muted: #65736b;
+      --bg: #f7f6f0;
+      --surface: #ffffff;
+      --border: #e0e5dc;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+    header {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 24px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand {
+      font-weight: 800;
+      font-size: 22px;
+      letter-spacing: -0.8px;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .brand span { color: var(--muted); }
+    nav a {
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    nav a:hover { text-decoration: underline; }
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px 20px 80px;
+    }
+    .paper {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: 0 12px 32px rgba(20, 62, 53, 0.05);
+    }
+    h1 {
+      font-size: 32px;
+      letter-spacing: -0.8px;
+      margin: 0 0 10px;
+    }
+    .meta {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 30px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 16px;
+    }
+    h2 {
+      font-size: 20px;
+      letter-spacing: -0.4px;
+      margin: 28px 0 12px;
+      color: var(--ink);
+    }
+    p, ul {
+      font-size: 15px;
+      color: #33443c;
+      margin: 0 0 16px;
+    }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 8px; }
+    a { color: var(--ink); font-weight: 600; }
+    footer {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: var(--muted);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    footer a { color: var(--ink); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="brand">◈ pocket<span>.</span></a>
+    <nav>
+      <a href="index.html">← Back to Home</a>
+    </nav>
+  </header>
+
+  <main>
+    <article class="paper">
+      <h1>Privacy Policy for Pocket Expense</h1>
+      <div class="meta">Effective Date: October 2026 · Developer: Hazishaheb</div>
+
+      <p>Your privacy is fundamental to <strong>Pocket Expense</strong>. Pocket Expense is built from the ground up as a 100% offline, local-first application. We do not collect, track, store, transmit, or share any personal information or financial data.</p>
+
+      <h2>1. Local Storage</h2>
+      <p>All expense entries, budgets, recurring bill reminders, and settings are stored strictly on your device in Android local application storage (via Android <code>SharedPreferences</code>). Your data never leaves your device unless you explicitly create a manual export or backup file.</p>
+
+      <h2>2. Network & Third-Party Access</h2>
+      <p>Pocket Expense operates entirely offline:</p>
+      <ul>
+        <li><strong>No Internet Permission:</strong> The app does not request or use Android network permissions (<code>android.permission.INTERNET</code>).</li>
+        <li><strong>No Third-Party Analytics:</strong> We do not integrate tracking, crash reporting, telemetry, or analytics SDKs.</li>
+        <li><strong>No Advertising:</strong> Pocket Expense contains zero advertisements or ad networks.</li>
+        <li><strong>No User Accounts:</strong> You do not need to create an account, sign in, or provide email/phone numbers to use the app.</li>
+      </ul>
+
+      <h2>3. System Permissions & File Pickers</h2>
+      <p>Pocket Expense uses system File Pickers (<code>ACTION_CREATE_DOCUMENT</code> and <code>ACTION_OPEN_DOCUMENT</code>) only when you initiate an action:</p>
+      <ul>
+        <li><strong>Exporting Data:</strong> Saving JSON backups or CSV expense sheets to a storage location you select.</li>
+        <li><strong>Restoring Backups:</strong> Reading a JSON backup file that you select from your device storage.</li>
+      </ul>
+
+      <h2>4. Android Widgets & Home Screen Privacy</h2>
+      <p>Pocket Expense includes optional Home Screen Widgets (Detailed and Compact). Widgets read your local device storage to show spending totals and provide quick shortcuts. A <strong>Home-screen privacy</strong> feature is available inside the app settings to hide monetary amounts on widgets, replacing numbers with <code>••••</code>.</p>
+
+      <h2>5. PDF Reports & Printing</h2>
+      <p>Monthly PDF report generation and printing are handled on-device using Android System Print Services (<code>PrintManager</code>). No external web servers or cloud converters are involved.</p>
+
+      <h2>6. Data Control & Deletion</h2>
+      <p>You have total ownership and control over your financial records:</p>
+      <ul>
+        <li><strong>Expense Removal:</strong> Deleting an entry inside the app immediately removes it from local storage.</li>
+        <li><strong>Full Data Wipe:</strong> Uninstalling Pocket Expense completely removes all application storage and local database records from your device. You can create a JSON backup before uninstalling if you wish to preserve your data.</li>
+      </ul>
+
+      <h2>7. Contact & Support</h2>
+      <p>If you have any questions or feedback regarding this Privacy Policy or Pocket Expense, please contact:</p>
+      <p>
+        <strong>Developer:</strong> Hazishaheb<br>
+        <strong>Support Email:</strong> <a href="mailto:chowdhryemon69@gmail.com">chowdhryemon69@gmail.com</a><br>
+        <strong>Source Repository:</strong> <a href="https://github.com/chowdhryemon69-png/pocket-expense" target="_blank" rel="noopener">https://github.com/chowdhryemon69-png/pocket-expense</a>
+      </p>
+    </article>
+  </main>
+
+  <footer>
+    <div>© Pocket Expense · Hazishaheb</div>
+    <div>
+      <a href="index.html">Home</a> ·
+      <a href="https://github.com/chowdhryemon69-png/pocket-expense" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </footer>
+
+</body>
+</html>
